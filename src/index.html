@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #b1{
+            background-color:aliceblue;
+            color: red;
+            border-radius:10px;
+            padding: 5px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="HalliHallo">            
+    </div>
+    
+    <button id="b1" onclick="addToList()">hinzufügen</button>
+    <button id="b2" onclick="genList()">generieren</button>
+    <input id="i1" value="eintragen"></input>
+
+</body>
+<script>
+
+    let myList = [];
+    let myObject = {};
+
+    function genList() {
+        let innerHTML = "<ul>";
+            myList.forEach((item) => {
+                innerHTML += `<li>${item}</li>`;
+            })
+            innerHTML += "</ul>";
+            document.getElementById("HalliHallo").innerHTML = innerHTML;
+        }
+
+    function test(){
+        console.log("schwans");
+        let innerHTML = "Ich wurde geklickt";
+        document.getElementById("HalliHallo").innerHTML=innerHTML;
+    }
+
+    function addToList(){
+        let values = document.getElementById("i1").value;
+        let object = {
+            value : values,
+            id : myList.length
+        }
+        myList.push(values);
+    }
+</script>
+</html>
